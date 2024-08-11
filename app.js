@@ -16,10 +16,12 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 
+const posts = [];
 
 
 app.get("/", function (req, res){
   res.render("home", {hsc: homeStartingContent});
+  console.log(posts);
 });
 
 
@@ -31,6 +33,22 @@ app.get("/about", function(req, res){
 app.get("/contact", function(req,res){
   res.render("contact", {cc: contactContent} );
 });
+
+
+app.get("/compose", function(req, res){
+  res.render("compose");
+})
+
+
+app.post("/compose", function(req,res){
+  let post = {
+    postTitle: req.body.postTitle,
+    composeArea: req.body.composeArea
+  };
+  posts.push(post);
+  
+  res.redirect("/");
+})
 
 
 app.listen(3000, function() {
