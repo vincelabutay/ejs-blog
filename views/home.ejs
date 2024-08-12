@@ -16,7 +16,7 @@
    
         <% posts.forEach(function(post) { %>
             <h1><%= post.postTitle %></h1>
-            <p><%= post.composeArea %></p>
+            <p><%= (post.composeArea).slice(0,140) + " ..." %><a href="/posts/<%= post.postTitle %>">Read More</a></p>
         <% }); %>
     
      
