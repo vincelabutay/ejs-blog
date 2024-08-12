@@ -20,8 +20,8 @@ const posts = [];
 
 
 app.get("/", function (req, res){
-  res.render("home", {hsc: homeStartingContent});
-  console.log(posts);
+  res.render("home", {hsc: homeStartingContent, posts: posts });
+  
 });
 
 

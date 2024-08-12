@@ -10,11 +10,21 @@
 <h1>Home</h1>
 
 
-
 <p> <%= hsc %></p>
 
 
+   
+        <% posts.forEach(function(post) { %>
+            <h1><%= post.postTitle %></h1>
+            <p><%= post.composeArea %></p>
+        <% }); %>
+    
+     
+    
+    
 
 
 
-<%- include("partials/footer") -%>
+
+
+
